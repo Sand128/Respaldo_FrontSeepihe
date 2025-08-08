@@ -192,7 +192,7 @@ function Sidebar({
                   }}
                 </SidebarLinkGroup>
                 {/* Catálogos */}
-                <SidebarLinkGroup bloqueo={ true } activecondition={pathname === '/' || pathname.includes('catalogo')}>
+                <SidebarLinkGroup bloqueo={ false } activecondition={pathname === '/' || pathname.includes('catalogo')}>
                   {(handleClick, open) => {
                     return (
                       <React.Fragment>
