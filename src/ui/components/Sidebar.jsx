@@ -52,7 +52,8 @@ function Sidebar({
 
 
   const { profile } = useSelector( state => state.auth );
-  const { firstTime } = useSelector( state => state.auth );
+  //const { firstTime } = useSelector( state => state.auth );
+  const firstTime = 1; // Solo para pruebas
 
   const dispatch = useDispatch();
   const onLogout = () => {
