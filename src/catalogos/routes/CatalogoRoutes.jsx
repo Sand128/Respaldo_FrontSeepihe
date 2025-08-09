@@ -15,3 +15,5 @@ export const CatalogoRoutes = () => {
 
   )
 }
+// usuario/* es una ruta padre.
+// UsuarioPage defines las rutas hijas (registrar, lista, etc.).

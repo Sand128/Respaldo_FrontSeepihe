@@ -53,3 +53,14 @@ export const UsuarioPage = () => {
     </>
   )
 }
+//        Ruta completa                                   Componente que se renderiza
+// catalogo/usuario/registrar                                 <UsuarioForm />
+// catalogo/usuario/lista                                   	<UsuarioList />
+// catalogo/usuario/editar/:id                                <UsuarioEdit /> (dinámico)
+
+
+// Cualquier otra (/*)	                                   Redirige a /catalogo/usuario/lista
+// IMPORTANTE  
+// Esto funciona porque UsuarioPage probablemente se carga desde una ruta padre como /catalogo/usuario/*
+//  son rutas hijas porque están definidas con rutas relativas 
+// ("registrar", "lista"...) dentro de un componente que ya tiene una ruta base padre.
