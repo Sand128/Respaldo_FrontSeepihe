@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import { UsuarioPage } from "../pages"
+import { UsuarioPage , ProductoPage, CategoriaPage} from "../pages"  // import { ProductoPage } from "../pages"
+import { NotFoundPage } from "../pages/NotFoundPage"  // Importa el componente
+
 
 export const CatalogoRoutes = () => {
 
@@ -8,8 +10,11 @@ export const CatalogoRoutes = () => {
     <>
         <Routes>
           <Route path="usuario/*" element={ <UsuarioPage />} />
+          <Route path="producto/*" element={ < ProductoPage />} />
+          <Route path="categoria/*" element={ < CategoriaPage />} />
 
-          <Route path="/*" element= { <Navigate to={"usuario"}/> } />
+          {/* Página para rutas no encontradas */}
+          <Route path="*" element={ < NotFoundPage /> }/>
         </Routes>
     </>
 

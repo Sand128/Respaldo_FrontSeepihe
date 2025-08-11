@@ -257,6 +257,40 @@ function Sidebar({
                             </li>
                           </ul>
                         </div>
+                        <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
+                          <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
+                            <li className="mb-1 last:mb-0">
+                              <NavLink
+                                end
+                                to="/catalogo/producto/"
+                                className={
+                                  'block transition duration-150 truncate ' + ((pathname.includes('/catalogo/producto/')) ? 'text-white' : 'text-slate-300 hover:text-white')
+                                }
+                              >
+                                <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                  Productos
+                                </span>
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
+                          <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
+                            <li className="mb-1 last:mb-0">
+                              <NavLink
+                                end
+                                to="/catalogo/categoria/"
+                                className={
+                                  'block transition duration-150 truncate ' + ((pathname.includes('/catalogo/categoria/')) ? 'text-white' : 'text-slate-300 hover:text-white')
+                                }
+                              >
+                                <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                  Categorias
+                                </span>
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </div>
                       </React.Fragment>
                     );
                   }}
