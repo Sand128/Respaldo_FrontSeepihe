@@ -7,7 +7,8 @@ import { PaginationPublic, SearchBar } from "../../../ui/components";
 import { pass } from "../../../api";
 
 
-
+//UsuarioList.jsx es un componente de React que muestra la lista de usuarios.
+//El flujo de datos pasa por Redux, usando getData() del store (no mostraste su implementación, pero se entiende que hace la llamada a la API y actualiza el estado consultas).
 export const UsuarioList = () => {
 
     const dispatch = useDispatch();

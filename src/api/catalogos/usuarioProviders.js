@@ -1,7 +1,17 @@
 import { baseApi } from "../baseApi";
 
+//usuarioProviders.js contiene funciones que llaman a la API 
+//(por ejemplo, para guardar, editar, listar usuarios, etc.).
+/*
 
+| Función       | ¿Qué hace?                      | Método HTTP | Ruta                   |
+| ------------- | ------------------------------- | ----------- | ---------------------- |
+| `saveUsuario` | Crea un usuario nuevo           | POST        | `/store-user`          |
+| `getAllUsers` | Obtiene todos los usuarios      | GET         | `/get-users`           |
+| `editUser`    | Edita un usuario existente      | PUT         | `/update-user/:id`     |
+| `putPassword` | Cambia contraseña de un usuario | PUT         | `/update-password/:id` |
 
+*/
 
 export const saveUsuario = async ( name, perfil, area, jurisdiccion, email, password, token ) => {
 
