@@ -1,29 +1,51 @@
-import { baseApi } from "../baseApi";
 
-
-
-
-export const saveProducto = async ( ) =>{
-
-}
+import { baseApi } from "../baseApi";//dónde viene baseApi
 
 export const getAllProductos = async () => {
-    try{
-        const resp = await baseApi.get('/productos', {
-            headers: { token: localStorage.getItem('token')}
-        });
-        return{
+    try {
+        const resp = await baseApi.get('/get-productos');
+        const { message, success, productos } = resp.data;
+        return {
             ok: true,
-            productos: resp.data,
+            productos,
+            message,
+            success,
         };
-    }catch (error){
-        return{
+    } catch (error) {
+        return {
             ok: false,
-            error: error.response?.data || error.mensaje,
+            error: error.response?.data || error.message,
         };
     }
 };
- 
-export const editProducto = async () => {
 
+
+
+/*
+export const saveProducto = async ( id,name,price,status,idcategoria ) =>{
+
+    try{
+        const resp = await baseApi.get('/productos/store-productos', {
+            id: id,
+            name: nombre,
+            price: precio,
+            status: estatus,
+            idcategoria: categoria_id
+        });
+            
+        const {message,newProducto } =  resp.data;
+
+        return {
+            ok: true,
+            user:newProducto,
+            message: message,
+        }
+    }catch (error){
+        return{
+            ok: false,
+            error: error.response.data
+        }
+    }
 }
+
+*/
