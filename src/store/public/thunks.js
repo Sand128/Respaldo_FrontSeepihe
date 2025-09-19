@@ -23,21 +23,20 @@ export const getData = (currentPage, path, token) => {
 }
 
 
-export const findData = ( busqueda, path, token ) => {
+export const findData = (busqueda, path, token) => {
+    return async (dispatch) => {
+        dispatch(cleanConsultas());
 
-    return async ( dispatch ) => {
+        const consulta = await getSearchData(busqueda, path, token);
 
-        dispatch( cleanConsultas() );
+        if (consulta.ok) {
+            return dispatch(gettingConsultas(consulta.data)); // Aquí viene el paginado
+        }
 
-        const consulta = await getSearchData( busqueda, path, token );
-        
-        if ( consulta.ok ) return dispatch( gettingConsultas( consulta.data ) );
-        
-        dispatch( cleanConsultas() );
+        dispatch(cleanConsultas());
+    };
+};
 
-    }
-
-}
 
 
 export const getEditData = ( path, id, token ) => {
