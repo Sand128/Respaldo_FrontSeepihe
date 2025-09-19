@@ -16,7 +16,7 @@ export const getData = (currentPage, path, token) => {
         if ( consulta.ok ) return dispatch( gettingConsultas( consulta.data ) );
         
         dispatch( cleanConsultas() );
-        console.log(consulta);
+        //console.log(consulta);
 
     }
 
@@ -116,7 +116,7 @@ export const getCatalogos = ( token ) => {
 
         const catalogos = await getAllCatalogos( token );
 
-        dispatch( setCatalogos( catalogos ) );
+        //dispatch( setCatalogos( catalogos ) );
 
 
     }
