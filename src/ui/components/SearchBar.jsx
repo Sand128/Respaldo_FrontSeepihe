@@ -25,6 +25,12 @@ export const SearchBar = ( data ) => {
             }
         }
     }
+    
+    const handleSearch = (nombre) => {
+        const filters = { nombre }; // puedes incluir más: estatus, precio, etc.
+        dispatch(findData(filters, '/v1/productos/get-productos', token));
+    };//si el usuario escribe "laptop" en un SearchBar, este valor se pasa como nombre.
+
 
 
   return (
