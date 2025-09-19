@@ -29,7 +29,8 @@ export const getAllData = async ( currentPage, path, token ) => {
 export const getSearchData = async ( busqueda, path, token ) => {
 
     try {
-        const resp = await baseApi.get(`${ path }/${ busqueda }`, {
+        const resp = await baseApi.get(`${path}`, {
+            params: busqueda,
             headers: { 'token': token },
         });
 
