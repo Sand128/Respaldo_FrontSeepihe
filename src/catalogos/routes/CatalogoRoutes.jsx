@@ -6,18 +6,14 @@ import { NotFoundPage } from "../pages/NotFoundPage"  // Importa el componente
 export const CatalogoRoutes = () => {
 
   return (
+    <Routes>
+      <Route path="usuario/*" element={ <UsuarioPage />} />
+      <Route path="producto/*" element={ < ProductoPage />} />
+      <Route path="categoria/*" element={ < CategoriaPage />} />
 
-    <>
-        <Routes>
-          <Route path="usuario/*" element={ <UsuarioPage />} />
-          <Route path="producto/*" element={ < ProductoPage />} />
-          <Route path="categoria/*" element={ < CategoriaPage />} />
-
-          {/* Página para rutas no encontradas */}
-          <Route path="*" element={ < NotFoundPage /> }/>
-        </Routes>
-    </>
-
+      {/* Página para rutas no encontradas */}
+      <Route path="*" element={ < NotFoundPage /> }/>
+    </Routes>
   )
 }
 // usuario/* es una ruta padre.

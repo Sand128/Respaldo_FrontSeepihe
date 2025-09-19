@@ -35,29 +35,37 @@ export const ProductoList = () => {
                     </thead>
                     <tbody>
                         { consulta?.map( ( { id,nombre,precio,estatus,categoria_id }, i ) => {
-                            return <>
-                            <tr key={i} className="bg-gray-50 border-b hover:bg-orange-100 border-colorTerciario                       -700">
-                                <th scope="row" className="flex items-center py-1 px-4 space-x-3 whitespace-nowrap">
-                                    <div className="flex items-center">
+                            return (
+                                <tr key={id} className="bg-gray-50 border-b hover:bg-orange-100 border-colorTerciario -700">
+                                    <th scope="row" className="flex items-center py-1 px-4 space-x-3 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <Link type="button" title="Editar" className="text-fuchsia-400 hover:text-white border-2 border-fuchsia-400 hover:bg-fuchsia-600 focus:ring-2 focus:outline-none focus:ring-fuchsia-200 font-medium rounded-lg text-sm px-3 py-2.5 text-center mr-2 mb-2"
-                                                    to={`../editar/${ CryptoJS.AES.encrypt( JSON.stringify( id ),pass ).toString().replace(/\+/g,'p1L2u3S').replace(/\//g,'bXaJN0921').replace(/=/g,'e1Q2u3A4l') }`}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                    <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
-                                                    <path d="M13.5 6.5l4 4"></path>
-                                                </svg>
-                                            </Link>
+                                            <div className="flex items-center">
+                                                <Link
+                                                    type="button"
+                                                    title="Editar"
+                                                    className="text-fuchsia-400 hover:text-white border-2 border-fuchsia-400 hover:bg-fuchsia-600 focus:ring-2 focus:outline-none focus:ring-fuchsia-200 font-medium rounded-lg text-sm px-3 py-2.5 text-center mr-2 mb-2"
+                                                    to={`../editar/${ CryptoJS.AES.encrypt(JSON.stringify(id), pass)
+                                                        .toString()
+                                                        .replace(/\+/g, 'p1L2u3S')
+                                                        .replace(/\//g, 'bXaJN0921')
+                                                        .replace(/=/g, 'e1Q2u3A4l') }`}
+                                                >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
+                                                        <path d="M13.5 6.5l4 4"></path>
+                                                    </svg>
+                                                </Link>
+                                            </div>
                                         </div>
-                                    </div>
-                                </th>
-                                <td className="py-1 px-4">{ id }</td>
-                                <td className="py-1 px-4">{ nombre }</td>
-                                <td className="py-1 px-4">${ precio }</td>
-                                <td className="py-1 px-4">{ ( estatus == 1) ? 'ACTIVO' : 'DESACTIVADO' }</td>
-                                <td className="py-1 px-4">{ categoria_id }</td>
-                            </tr>
-                            </>
+                                    </th>
+                                    <td className="py-1 px-4">{id}</td>
+                                    <td className="py-1 px-4">{nombre}</td>
+                                    <td className="py-1 px-4">${precio}</td>
+                                    <td className="py-1 px-4">{estatus == 1 ? 'ACTIVO' : 'DESACTIVADO'}</td>
+                                    <td className="py-1 px-4">{categoria_id}</td>
+                                </tr>
+                            );
                         })}
                     </tbody>
                 </table>
