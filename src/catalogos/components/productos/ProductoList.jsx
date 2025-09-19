@@ -11,12 +11,10 @@ export const ProductoList = () => {
 
     const { token } = useSelector( state => state.auth );
     const { loading, currentPage, path, consulta, from, to, lastPage, total, links } = useSelector( state => state.consultas );
-    
+
     useEffect(() => {
         dispatch( getData( currentPage, '/productos/get-productos', token ) );
     }, [token]);
-
-    console.log(token);
 
     return (
         <>
