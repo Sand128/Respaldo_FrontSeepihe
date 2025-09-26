@@ -15,7 +15,7 @@ export const MainRoutes = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const { token } = useSelector( state => state.auth );
     const dispatch = useDispatch();
-    dispatch( getCatalogos( token ) );
+    //dispatch( getCatalogos( token ) );
 
   return (
     <>
