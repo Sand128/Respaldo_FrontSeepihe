@@ -3,5 +3,5 @@
 
 
 export * from './usuarioProviders';
-export * from './productoProviders';
+//export * from './productoProviders';
 
